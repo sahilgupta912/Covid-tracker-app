@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="20dp"
+    android:elevation="2dp"
+    android:background="@drawable/box"
+    android:layout_marginVertical="2dp"
+    android:layout_marginHorizontal="5dp">
+
+    <TextView
+        android:id="@+id/txtState"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:fontFamily="@font/serif"
+        android:padding="5dp"
+        android:text="State"
+        android:textColor="#171717"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/txtStateConfirmed"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="9999"
+        android:textSize="13sp"
+        android:textColor="#78233e"/>
+    <TextView
+        android:id="@+id/txtStateRecovered"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="9999"
+        android:textSize="14sp"
+        android:textColor="#27cc0e"/>
+    <TextView
+        android:id="@+id/txtStateDeceased"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="9999"
+        android:textSize="14sp"
+        android:textColor="#e36c17"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

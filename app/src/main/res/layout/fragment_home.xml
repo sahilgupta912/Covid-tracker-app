@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtCorona"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/adamina_regular"
+                android:gravity="center_horizontal"
+                android:text="Corona In India"
+                android:textAlignment="center"
+                android:textColor="#1d7ebf"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/covid1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="Logo" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box"
+            android:layout_margin="20dp"
+            android:elevation="2dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina_regular"
+                android:text="Today's Statistics"
+                android:textColor="#1d7ebf"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/rlTodayBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtToday"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="7dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="5dp"
+                            android:background="@drawable/confirmed_bg">
+
+                            <TextView
+                                android:id="@+id/txtTodayConfirmed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="Confirmed"
+                                android:textColor="#78233e"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/todayConfirmed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtTodayConfirmed"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="----"
+                                android:textColor="#78233e"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="5dp"
+                            android:background="@drawable/recovered_bg">
+
+                            <TextView
+                                android:id="@+id/txtTodayRecovered"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="Recovered"
+                                android:textColor="#76f263"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/todayRecovered"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtTodayRecovered"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="----"
+                                android:textColor="#76f263"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="5dp"
+                            android:background="@drawable/deceased_bg">
+
+
+                            <TextView
+                                android:id="@+id/txtTodayDeceased"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="Deceased"
+                                android:textColor="#eb9457"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/todayDeceased"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtTodayDeceased"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="----"
+                                android:textColor="#eb9457"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="5dp"
+                            android:background="@drawable/vaccination_bg">
+
+                            <TextView
+                                android:id="@+id/txtTodayVaccination"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="Total Vaccination"
+                                android:textColor="#195944"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/todayVaccination"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtTodayVaccination"
+                                android:fontFamily="serif"
+                                android:padding="2dp"
+                                android:text="----"
+                                android:textColor="#195944"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtLastUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlTodayBlock"
+                android:layout_marginTop="20dp"
+                android:text="Last Updated:"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pieBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:layout_margin="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/box"
+            android:elevation="2dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtOverall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/adamina_regular"
+                android:text="Overall Data"
+                android:textColor="#1d7ebf"
+                android:textSize="14sp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/txtOverall"
+                android:padding="0dp" />
+
+            <!--
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                tools:ignore="NotSibling">
+
+                <RelativeLayout
+                    android:id="@+id/pieLine1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/squareActive"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_pie_confirmed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/squareActive"
+                        android:fontFamily="serif"
+                        android:text="Confirmed"
+                        android:textColor="#78233e"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pieLine2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pieLine1"
+                    android:layout_marginTop="7dp">
+
+                    <ImageView
+                        android:id="@+id/squareRecovered"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@id/squareActive"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/pieChart"
+                        android:src="@drawable/ic_pie_recovered" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/squareActive"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/squareRecovered"
+                        android:fontFamily="serif"
+                        android:text="Recovered"
+                        android:textColor="#27cc0e"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pieLine3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pieLine2"
+                    android:layout_marginTop="7dp">
+
+                    <ImageView
+                        android:id="@+id/squareDeath"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@id/squareRecovered"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/pieChart"
+                        android:src="@drawable/ic_pie_death" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/squareRecovered"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/squareDeath"
+                        android:fontFamily="serif"
+                        android:text="Deceased"
+                        android:textColor="#e36c17"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+            -->
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rowWiseData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/linear2"
+            android:elevation="15dp"
+            android:layout_below="@id/pieBlock">
+            <RelativeLayout
+                android:id="@+id/ActiveBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="30dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Active Cases"
+                    android:textColor="#1d7ebf"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="deaths"
+                    android:src="@drawable/ic_active" />
+
+                <TextView
+                    android:id="@+id/numberNationalActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtActive"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#1d7ebf"
+                    android:textSize="18sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ConfirmedBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Confirmed Cases"
+                    android:textColor="#78233e"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Total active cases"
+                    android:src="@drawable/ic_confirm" />
+
+                <TextView
+                    android:id="@+id/numberNationalConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtTotal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#78233e"
+                    android:textSize="18sp" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/confirmLineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/numberNationalConfirm"
+                    android:layout_marginHorizontal="5dp" />
+
+                <!--
+                <TextView
+                    android:id="@+id/txtViewGraphConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/numberNationalConfirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="View Graph"
+                    android:textColor="#78233e"
+                    android:textSize="15sp" />
+                    -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RecoveredBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Recovered Cases"
+                    android:textColor="#27cc0e"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Recovered cases"
+                    android:src="@drawable/ic_recovered" />
+
+                <TextView
+                    android:id="@+id/numberNationalRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtRecovered"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#27cc0e"
+                    android:textSize="18sp" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/recoveredLineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/numberNationalRecovered"
+                    android:layout_marginHorizontal="5dp" />
+
+                <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Graph"
+                    android:layout_below="@id/numberNationalRecovered"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#27cc0e"/>
+                    -->
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/DeathBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtDeceased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Deceased"
+                    android:textColor="#e36c17"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="deaths"
+                    android:src="@drawable/ic_death" />
+
+                <TextView
+                    android:id="@+id/numberNationalDeceased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtDeceased"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#e36c17"
+                    android:textSize="18sp" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/deceasedLineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/numberNationalDeceased"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Graph"
+                    android:layout_below="@id/numberNationalDeceased"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#e36c17"/>
+                    -->
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/Vaccinated1Block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtVaccinated1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Vaccinated 1"
+                    android:textColor="#195944"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="deaths"
+                    android:src="@drawable/ic_vaccine" />
+
+                <TextView
+                    android:id="@+id/numberNationalVaccinated1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtVaccinated1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#195944"
+                    android:textSize="18sp" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/vaccinated1LineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/numberNationalVaccinated1"
+                    android:layout_marginHorizontal="5dp"
+                    />
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/numberNationalVaccinated1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="View Graph"
+                    android:textColor="#195944"
+                    android:textSize="15sp" />
+                    -->
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/Vaccinated2Block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:padding="20dp"
+                android:layout_marginHorizontal="15dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/txtVaccinated2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:padding="10dp"
+                    android:text="Vaccinated 2"
+                    android:textColor="#195944"
+                    android:textSize="17sp" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_vaccine"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="deaths" />
+
+                <TextView
+                    android:id="@+id/numberNationalVaccinated2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtVaccinated2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="serif"
+                    android:text="-----"
+                    android:textColor="#195944"
+                    android:textSize="18sp" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/vaccinated2LineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/numberNationalVaccinated2"
+                    android:layout_marginHorizontal="5dp" />
+
+            </RelativeLayout>
+            <!--
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:padding="20dp"
+                android:background="@drawable/box"
+                android:elevation="1dp">
+                <TextView
+                    android:id="@+id/txtLast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Updated:"
+                    android:textColor="#171717"
+                    android:textSize="17sp"
+                    android:fontFamily="serif"/>
+                <TextView
+                    android:id="@+id/lastUpdated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@id/txtLast"
+                    android:layout_marginStart="20dp"
+                    android:textColor="#171717"
+                    android:fontFamily="serif"/>
+            </RelativeLayout>
+            -->
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
